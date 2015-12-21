@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title></title>
+
+  <!-- <link href="angular_modules/ionic/css/ionic.css" rel="stylesheet"> -->
+  <!-- <link href="css/style.css" rel="stylesheet"> -->
+
+  <!--jQuery-->
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+  <!--Bootstrap cdn css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+  <!--bootstrap js-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+  <!--socket.io-->
+  <script src="./angular_modules/socket-io/socket.io.js"></script>
+
+  <!-- ionic/angularjs js -->
+  <script src="./angular_modules/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="./angular_modules/ng-cordova/ng-cordova.js"></script>
+  <script src="cordova.js"></script>
+
+  <!-- your app's js -->
+  <script src="app.js"></script>
+  <script src="./lib/controller/shazam.controller.js"></script>
+</head>
+
+<body ng-app="shazamApp" class="platform-ios platform-cordova platform-webview">
+
+  <!-- <ion-pane>
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Ionic Blank Starter</h1>
+    </ion-header-bar>
+    <ion-content>
+    </ion-content>
+  </ion-pane> -->
+  <!--<nav class="navbar navbar-default"></nav>-->
+  <div class="container" ng-controller="shazam.controller">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img ng-src="{{imgUrl}}" alt="Description" height="500px" width="300px" />
+        </div>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button ng-click="shazam()" class="btn btn-primary btn-lg" style="margin:auto"> Shazam!</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="col-md-4 text-center" ng-style="appState.websiteApp.visible ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+        <h2 class="text-center">{{appState.websiteApp.shazamHeader}}</h2>
+        <p>{{appState.websiteApp.appDesc}}</p>
+        <p>Count: {{appState.websiteApp.count}}</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <h2 class="text-center">ShazamJs</h2>
+        <p>Author: Robert Sell</p>
+        <p>Twitter: @DukeOfNode</p>
+      </div>
+      <div class="col-md-4 text-center" ng-style="appState.desktopApp.visible ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+        <h2 class="text-center">{{appState.desktopApp.shazamHeader}}</h2>
+        <p>{{appState.desktopApp.appDesc}}</p>
+        <p>Count: {{appState.desktopApp.count}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 text-center" ng-style="appState.consoleApp.visible ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+        <h2 class="text-center">{{appState.consoleApp.shazamHeader}}</h2>
+        <p>{{appState.consoleApp.appDesc}}</p>
+        <p>Count: {{appState.consoleApp.count}}</p>
+      </div>
+      <div class="col-md-4 text-center" ng-style="appState.hardwareApp.visible ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+        <h2 class="text-center">{{appState.hardwareApp.shazamHeader}}</h2>
+        <p>{{appState.hardwareApp.appDesc}}</p>
+        <p>Count: {{appState.hardwareApp.count}}</p>
+      </div>
+      <div class="col-md-4 text-center" ng-style="appState.mobileApp.visible ? {'visibility': 'visible'} : {'visibility': 'hidden'}">
+        <h2 class="text-center">{{appState.mobileApp.shazamHeader}}</h2>
+        <p>{{appState.mobileApp.appDesc}}</p>
+        <p>Count: {{appState.mobileApp.count}}</p>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</body>
+
+</html>
